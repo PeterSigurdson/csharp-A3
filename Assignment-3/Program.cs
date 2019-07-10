@@ -17,9 +17,11 @@ namespace Assignment_3
     }
 
     class TextProcessing
-    { 
+    {
+        Queue<string> names = new Queue<string>();
         public void Run()
         {
+            
             // Open the names file and access the data
             using (StreamReader file = new StreamReader("C:/Users/HP/Dropbox/Academic_Desk/ProgramCode/csharpSection12/Assignment-3/Assignment-3/names.txt"))
             {
@@ -28,7 +30,7 @@ namespace Assignment_3
 
                 while ((ln = file.ReadLine()) != null)
                 {
-                    Console.WriteLine(ln);
+                    names.Enqueue(ln);
                     counter++;
                 }
                 file.Close();
