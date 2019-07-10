@@ -35,7 +35,39 @@ namespace Assignment_3
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
+                // post condition of while is: 
+                // we now have a Data Member named names which is a Queue!!!!!
+                PlayingWithStacks.Run(names);
             }
+        }
+    }
+
+    class PlayingWithStacks
+    {
+        public static void Run(Queue<string> tangerine)
+        {
+            Stack<string> names = new Stack<string>();
+            // how can I access the Queue variables "names" here in this class???
+            // iterate OVER our Queue 
+            // get each element
+            // push it into the Stack
+            foreach (var item in tangerine)
+            {
+                names.Push(tangerine.Dequeue());
+            }
+        }
+    }
+
+    class Workbench { }
+
+    class Red {
+        public static string FavoriteFood = "Carrots";
+    }
+
+    class Blue {
+        public void SayFavoriteFood(string FavFood)
+        {
+            Console.WriteLine(Red.FavoriteFood);
         }
     }
 
